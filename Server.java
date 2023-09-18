@@ -1,6 +1,5 @@
 import javax.swing.*;
 import javax.swing.border.*;
-import javax.swing.event.ChangeListener;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -15,7 +14,7 @@ public class Server implements ActionListener {
     JPanel a1;
     static Box vertical = Box.createVerticalBox();
     static JFrame f = new JFrame();
-    static DataOutputStream dout = new DataOutputStream(null);
+    static DataOutputStream dout = new DataOutputStream(System.out);
 
     public void actionPerformed(ActionEvent ae) {
         try {
@@ -69,7 +68,7 @@ public class Server implements ActionListener {
 
         });
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/1.png"));
+        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/serverKrishna.png"));
         Image i5 = i4.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT);
         ImageIcon i6 = new ImageIcon(i5);
         JLabel profile = new JLabel(i6);
@@ -97,7 +96,7 @@ public class Server implements ActionListener {
         morevert.setBounds(420, 20, 10, 25);
         p1.add(morevert);
 
-        JLabel name = new JLabel("Ashmit");
+        JLabel name = new JLabel("Ridam");
         name.setBounds(110, 15, 100, 20);
         name.setForeground(Color.WHITE);
         name.setFont(new Font("SAN_SERIF", Font.BOLD, 18));
@@ -160,9 +159,18 @@ public class Server implements ActionListener {
         new Server();
 
         try {
-            ServerSocket skt = new ServerSocket(6001);
+<<<<<<< HEAD
+            ServerSocket skt = new ServerSocket(8081, 0, InetAddress.getByName("20.0.12.189"));
+            // skt.bind(null);
+
+=======
+            ServerSocket skt = new ServerSocket(
+                    6001);
+            // skt.bind(null);
+>>>>>>> 1da772aeef7f1559d38ace54997088efa6b1b76e
             while (true) {
                 Socket s = skt.accept();
+                System.out.println("connected");
                 DataInputStream din = new DataInputStream(s.getInputStream());
                 dout = new DataOutputStream(s.getOutputStream());
 

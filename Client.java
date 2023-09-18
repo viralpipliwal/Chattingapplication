@@ -16,7 +16,7 @@ public class Client implements ActionListener {
 
     static JFrame f = new JFrame();
 
-    static DataOutputStream dout;
+    static DataOutputStream dout = new DataOutputStream(System.out);
 
     Client() {
         f.setLayout(null);
@@ -43,7 +43,7 @@ public class Client implements ActionListener {
 
         });
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/2.png"));
+        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("icons/clientSingh.png"));
         Image i5 = i4.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT);
         ImageIcon i6 = new ImageIcon(i5);
         JLabel profile = new JLabel(i6);
@@ -71,7 +71,7 @@ public class Client implements ActionListener {
         morevert.setBounds(420, 20, 10, 25);
         p1.add(morevert);
 
-        JLabel name = new JLabel("Viral");
+        JLabel name = new JLabel("Ishika");
         name.setBounds(110, 15, 100, 20);
         name.setForeground(Color.WHITE);
         name.setFont(new Font("SAN_SERIF", Font.BOLD, 18));
@@ -161,10 +161,14 @@ public class Client implements ActionListener {
     public static void main(String[] args) {
         new Client();
         try {
-            Socket s = new Socket("127.0.0.1", 6001);
+<<<<<<< HEAD
+            Socket s = new Socket("20.0.12.189", 8081);
+=======
+            Socket s = new Socket("103.255.235.50", 6001);
+>>>>>>> 1da772aeef7f1559d38ace54997088efa6b1b76e
             DataInputStream din = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
-            
+
             while (true) {
                 a1.setLayout(new BorderLayout());
                 String msg = din.readUTF();
