@@ -9,7 +9,7 @@ import java.net.*;
 import java.io.*;
 
 public class Client implements ActionListener {
-
+    // Text Field
     JTextField text;
     static JPanel a1;
     static Box vertical = Box.createVerticalBox();
@@ -33,7 +33,7 @@ public class Client implements ActionListener {
         JLabel back = new JLabel(i3);
         back.setBounds(5, 20, 25, 25);
         p1.add(back);
-
+        // Back button
         back.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -70,7 +70,7 @@ public class Client implements ActionListener {
         JLabel morevert = new JLabel(i15);
         morevert.setBounds(420, 20, 10, 25);
         p1.add(morevert);
-
+        // Client Name
         JLabel name = new JLabel("Ishika");
         name.setBounds(110, 15, 100, 20);
         name.setForeground(Color.WHITE);
@@ -91,7 +91,7 @@ public class Client implements ActionListener {
         text.setBounds(5, 665, 310, 40);
         text.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
         f.add(text);
-
+        // Send button
         JButton send = new JButton("Send");
         send.setBounds(320, 655, 123, 40);
         send.setBackground(new Color(7, 94, 84));
@@ -161,11 +161,8 @@ public class Client implements ActionListener {
     public static void main(String[] args) {
         new Client();
         try {
-<<<<<<< HEAD
-            Socket s = new Socket("20.0.12.189", 8081);
-=======
-            Socket s = new Socket("103.255.235.50", 6001);
->>>>>>> 1da772aeef7f1559d38ace54997088efa6b1b76e
+            Socket s = new Socket("localhost", 6001);
+            // Socket s = new Socket("103.255.235.50", 6001);
             DataInputStream din = new DataInputStream(s.getInputStream());
             dout = new DataOutputStream(s.getOutputStream());
 

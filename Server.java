@@ -9,13 +9,14 @@ import java.net.*;
 import java.io.*;
 
 public class Server implements ActionListener {
-
+    // Text Field
     JTextField text;
     JPanel a1;
     static Box vertical = Box.createVerticalBox();
     static JFrame f = new JFrame();
     static DataOutputStream dout = new DataOutputStream(System.out);
 
+    // Back button
     public void actionPerformed(ActionEvent ae) {
         try {
             String out = text.getText();
@@ -95,7 +96,7 @@ public class Server implements ActionListener {
         JLabel morevert = new JLabel(i15);
         morevert.setBounds(420, 20, 10, 25);
         p1.add(morevert);
-
+        // Server name
         JLabel name = new JLabel("Ridam");
         name.setBounds(110, 15, 100, 20);
         name.setForeground(Color.WHITE);
@@ -116,7 +117,7 @@ public class Server implements ActionListener {
         text.setBounds(5, 665, 310, 40);
         text.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
         f.add(text);
-
+        // Send button
         JButton send = new JButton("Send");
         send.setBounds(320, 655, 123, 40);
         send.setBackground(new Color(7, 94, 84));
@@ -159,15 +160,8 @@ public class Server implements ActionListener {
         new Server();
 
         try {
-<<<<<<< HEAD
-            ServerSocket skt = new ServerSocket(8081, 0, InetAddress.getByName("20.0.12.189"));
-            // skt.bind(null);
-
-=======
-            ServerSocket skt = new ServerSocket(
-                    6001);
-            // skt.bind(null);
->>>>>>> 1da772aeef7f1559d38ace54997088efa6b1b76e
+           
+            ServerSocket skt = new ServerSocket(6001);
             while (true) {
                 Socket s = skt.accept();
                 System.out.println("connected");
